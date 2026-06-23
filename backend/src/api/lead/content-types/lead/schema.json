@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "Lead",
+    "description": "Contactos recibidos desde la web (CRM)"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": { "type": "string", "required": true },
+    "email": { "type": "email", "required": true },
+    "telefono": { "type": "string", "required": true },
+    "mensaje": { "type": "text" },
+    "origen": { "type": "string" },
+    "propiedadRef": { "type": "string" },
+    "estado": {
+      "type": "enumeration",
+      "enum": ["nuevo", "contactado", "visita", "negociacion", "cerrado", "perdido"],
+      "default": "nuevo"
+    },
+    "notas": { "type": "text" }
+  }
+}

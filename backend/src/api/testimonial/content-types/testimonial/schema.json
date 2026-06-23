@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonio",
+    "description": "Reseñas de clientes"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "text": { "type": "text", "required": true },
+    "rating": { "type": "integer", "default": 5, "min": 1, "max": 5 }
+  }
+}

@@ -1,0 +1,23 @@
+# dependencias
+**/node_modules/
+
+# builds
+web/.next/
+web/out/
+web/next-env.d.ts
+backend/dist/
+backend/build/
+backend/.cache/
+backend/.strapi/
+
+# base de datos local de Strapi
+backend/.tmp/
+
+# entorno / secretos (NUNCA subir)
+**/.env
+**/.env.local
+**/.env*.local
+
+# sistema
+.DS_Store
+*.log
