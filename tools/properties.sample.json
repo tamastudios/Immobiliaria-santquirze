@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Casa con piscina privada en Sant Quirze",
+    "operation": "venta",
+    "propertyType": "casa",
+    "status": "destacado",
+    "tag": "exclusiva",
+    "price": 620000,
+    "location": "Sant Quirze Parc",
+    "city": "Sant Quirze del Vallès",
+    "bedrooms": 5,
+    "bathrooms": 3,
+    "area": 220,
+    "reference": "SQ-PRUEBA-1",
+    "description": "Propiedad de prueba para verificar el importador. Casa con piscina y jardín.",
+    "features": ["5 habitaciones", "Piscina", "Jardín", "Garaje"],
+    "equipment": ["Aire acondicionado", "Calefacción"],
+    "energyCertificate": "C",
+    "featured": true,
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=70"
+    ]
+  },
+  {
+    "title": "Piso 3 habitaciones reformado",
+    "operation": "venta",
+    "propertyType": "piso",
+    "status": "disponible",
+    "tag": "nuevo",
+    "price": 295000,
+    "location": "Centre",
+    "city": "Sant Quirze del Vallès",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": 95,
+    "reference": "SQ-PRUEBA-2",
+    "description": "Segunda propiedad de prueba del importador. Piso reformado en el centro.",
+    "features": ["3 habitaciones", "Ascensor", "Terraza"],
+    "equipment": ["Cocina equipada"],
+    "energyCertificate": "B",
+    "featured": false,
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=70"
+    ]
+  }
+]
