@@ -37,7 +37,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-accent",
+                "nav-link text-sm font-medium transition-colors hover:text-accent",
                 scrolled ? "text-primary" : "text-white/90",
               )}
             >

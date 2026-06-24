@@ -7,13 +7,16 @@ import { SearchBar } from "../SearchBar";
 export function Hero() {
   return (
     <section id="inicio" className="relative min-h-[100svh] w-full overflow-hidden">
-      <Image
-        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=75"
-        alt="Vivienda premium en Sant Quirze del Vallès"
-        fill priority
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/20" />
+      <div className="absolute inset-0 kenburns">
+        <Image
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=75"
+          alt="Vivienda premium en Sant Quirze del Vallès"
+          fill priority
+          className="object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-primary/25" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/40 to-transparent" />
 
       <div className="container-x relative flex min-h-[100svh] flex-col justify-center pt-24">
         <motion.p
@@ -27,7 +30,7 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          className="max-w-3xl font-display text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-6xl"
+          className="text-balance max-w-3xl font-display text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-6xl"
         >
           Tu inmobiliaria de confianza en Sant Quirze del Vallès
         </motion.h1>
@@ -58,6 +61,12 @@ export function Hero() {
         >
           <SearchBar variant="hero" />
         </motion.div>
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-6 hidden justify-center md:flex">
+        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/40 p-1.5">
+          <span className="scroll-hint block h-2 w-1 rounded-full bg-white/80" />
+        </div>
       </div>
     </section>
   );

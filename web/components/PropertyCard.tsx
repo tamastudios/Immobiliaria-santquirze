@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BedDouble, Bath, Maximize, MapPin } from "lucide-react";
+import { BedDouble, Bath, Maximize, MapPin, ArrowRight } from "lucide-react";
 import { Property, PropertyTag } from "@/lib/types";
 import { formatPrice } from "@/lib/utils";
 
@@ -27,8 +27,9 @@ export function PropertyCard({ property }: { property: Property }) {
           alt={property.title}
           fill
           sizes="(max-width: 768px) 100vw, 320px"
-          className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+          className="object-cover transition-transform duration-[900ms] ease-premium group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         {property.tag && (
           <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${TAG_STYLES[property.tag]}`}>
             {TAG_LABEL[property.tag]}
@@ -55,8 +56,9 @@ export function PropertyCard({ property }: { property: Property }) {
           <span className="flex items-center gap-1.5"><Maximize className="h-4 w-4 text-secondary" /> {property.area} m²</span>
         </div>
 
-        <span className="mt-4 block w-full rounded-md border border-accent py-2 text-center text-sm font-semibold text-primary transition group-hover:bg-accent">
+        <span className="mt-4 flex w-full items-center justify-center gap-1.5 rounded-md border border-accent py-2 text-center text-sm font-semibold text-primary transition-all duration-300 group-hover:bg-accent group-hover:shadow-sm">
           Ver propiedad
+          <ArrowRight className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
         </span>
       </div>
     </Link>

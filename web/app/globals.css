@@ -25,7 +25,8 @@ body {
   .h-display { @apply font-display font-semibold leading-[1.05] text-primary; }
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3
-           text-sm font-semibold transition-all duration-300 ease-premium;
+           text-sm font-semibold transition-all duration-300 ease-premium
+           active:translate-y-px;
   }
   .btn-primary {
     @apply btn bg-primary text-white hover:bg-primary-deep hover:shadow-soft;
@@ -45,3 +46,40 @@ body {
 /* Animación sutil de aparición controlada por Framer Motion en la mayoría de
    componentes; este fallback evita parpadeos antes de hidratar. */
 .reveal-init { opacity: 0; transform: translateY(16px); }
+
+/* Equilibra los saltos de línea de los títulos (look editorial). */
+.text-balance { text-wrap: balance; }
+
+/* Subrayado dorado animado para los enlaces del menú. */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 1.5px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Ken Burns: zoom lento y elegante para la imagen del hero. */
+@keyframes kenburns {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.12); }
+}
+.kenburns { animation: kenburns 20s ease-out forwards; }
+
+/* Indicador de scroll del hero. */
+@keyframes scrollhint {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+.scroll-hint { animation: scrollhint 1.8s ease-in-out infinite; }
+
+/* Respeta a quien prefiere menos movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  .kenburns, .scroll-hint { animation: none; }
+  html { scroll-behavior: auto; }
+}
