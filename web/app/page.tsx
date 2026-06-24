@@ -1,4 +1,4 @@
-import { HeroVideo } from "@/components/home/HeroVideo";
+import { Hero } from "@/components/home/Hero";
 import { FeaturedProperties } from "@/components/home/FeaturedProperties";
 import { SellBlock } from "@/components/home/SellBlock";
 import { Services } from "@/components/home/Services";
@@ -11,7 +11,7 @@ import { ContactSection } from "@/components/ContactSection";
 export default function HomePage() {
   return (
     <>
-      <HeroVideo />
+      <Hero />
       <FeaturedProperties />
       <SellBlock />
       <Services />

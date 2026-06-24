@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { getFeaturedProperties } from "@/lib/api";
 import { PropertyCard } from "../PropertyCard";
 import { Reveal } from "../ui/Reveal";
-import { Tilt } from "../ui/Tilt";
 import { SectionHeading } from "./SectionHeading";
 
 export async function FeaturedProperties() {
@@ -21,7 +20,7 @@ export async function FeaturedProperties() {
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {properties.map((p, i) => (
           <Reveal key={p.id} delay={i * 0.08}>
-            <Tilt><PropertyCard property={p} /></Tilt>
+            <PropertyCard property={p} />
           </Reveal>
         ))}
       </div>
