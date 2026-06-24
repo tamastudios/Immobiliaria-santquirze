@@ -10,6 +10,11 @@ export function ContactForm({
     e.preventDefault();
     setStatus("sending");
     const data = Object.fromEntries(new FormData(e.currentTarget));
+    // Modo demo (GitHub Pages, sin servidor): simula el envío.
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "1") {
+      setTimeout(() => setStatus("ok"), 600);
+      return;
+    }
     try {
       const res = await fetch("/api/leads", {
         method: "POST",

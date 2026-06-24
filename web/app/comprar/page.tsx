@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { PropertyListing } from "@/components/PropertyListing";
+import { Suspense } from "react";
+import { getProperties } from "@/lib/api";
+import { ListingClient } from "@/components/ListingClient";
 
 export const metadata: Metadata = {
   title: "Comprar vivienda en Sant Quirze del Vallès",
@@ -7,9 +9,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/comprar" },
 };
 
-export default async function ComprarPage({
-  searchParams,
-}: { searchParams: Promise<Record<string, string | undefined>> }) {
-  const sp = await searchParams;
-  return <PropertyListing operation="venta" title="Propiedades en venta" searchParams={sp} />;
+export default async function ComprarPage() {
+  const properties = await getProperties({ operation: "venta" });
+  return (
+    <Suspense>
+      <ListingClient operation="venta" title="Propiedades en venta" properties={properties} />
+    </Suspense>
+  );
 }
