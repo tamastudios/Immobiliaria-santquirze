@@ -57,9 +57,10 @@ async function loadProperties(): Promise<Property[]> {
   if (!STRAPI_URL) return PROPERTIES;
   if (cache && Date.now() - cache.at < 30_000) return cache.data;
   try {
-    // Tiempo de espera: si Strapi no responde en 2,5s, usamos los datos de ejemplo.
+    // Tiempo de espera: si Strapi no responde a tiempo, usamos los datos de ejemplo.
+    // 6s da margen al "despertar" del plan gratuito de Render.
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 2500);
+    const timeout = setTimeout(() => controller.abort(), 6000);
     const res = await fetch(
       `${STRAPI_URL}/api/properties?populate=images&pagination[pageSize]=100&sort=createdAt:desc`,
       {
